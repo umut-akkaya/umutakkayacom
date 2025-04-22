@@ -8,7 +8,7 @@ on:
 jobs:
   build-hugo-and-push-to-s3:
     runs-on: ubuntu-latest
-    container: hugomods/hugo:ci
+    container: hugomods/hugo:ci-0.128.2
     steps:
       - uses: actions/checkout@v4
       - run : |
