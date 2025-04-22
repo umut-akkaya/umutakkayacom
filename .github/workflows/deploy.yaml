@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          apt install -y hugo
+          sudo apt install -y hugo
       - run : |
           ls -la .
           cat hugo.yaml
