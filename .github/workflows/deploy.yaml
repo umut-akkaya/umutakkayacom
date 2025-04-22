@@ -1,0 +1,16 @@
+---
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-hugo-and-push-to-s3:
+    runs-on: ubuntu-latest
+    container: hugomods/hugo:ci
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          hugo && ls -la public/
+      - run: |
+          echo Upload these files to s3 for server
