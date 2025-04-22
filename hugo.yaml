@@ -1,0 +1,30 @@
+baseURL: https://example.org/
+languageCode: en-us
+title: My New Hugo Site
+themesDir: themes
+theme: hugo-blog-awesomee
+
+menus:
+  main:
+   - name: 'Home'
+     url: '/'
+     weight: 1
+   - name: 'About'
+     url: '/pages/about/'
+     weight: 1
+params:
+  socialIcons:
+  - name: github
+    url: https://github.com/umut-akkaya
+  - name: x
+    url: https://x.com/cncfsec
+  - name: linkedin
+    url: https://www.linkedin.com/in/umut-a-9040041b3/
+  - name: gitlab
+    url: https://gitlab.com/akkaya.umut094
+  author:
+    name: Umut AKKAYA
+    avatar: foto3.jpg
+    intro: Umut's Blog
+    description: Welcome to my blog. I am using this website as a notebook to store and share any information related to comp science, devops, cloud computing and etc. 
+

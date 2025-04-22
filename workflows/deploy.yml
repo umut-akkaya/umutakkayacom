@@ -1,0 +1,8 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-static-files:
+    runs-on: ubuntu-latest
