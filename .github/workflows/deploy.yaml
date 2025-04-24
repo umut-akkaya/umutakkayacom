@@ -15,6 +15,7 @@ jobs:
           fetch-dept: 0
       - name: Install Hugo on Ubuntu
         run: |
+          sudo apt update
           sudo apt install -y hugo
       - name: Generate Static Files
         run: |
