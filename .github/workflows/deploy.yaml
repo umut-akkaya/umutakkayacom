@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-hugo-and-push-to-s3:
+  build-hugo-and-upload-artifact:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,11 +20,30 @@ jobs:
       - name: Generate Static Files
         run: |
           hugo && ls -la public/
-      - name: Upload the files to S3 Bucket
-        uses: shallwefootball/s3-upload-action@master
+      - uses: actions/upload-artifact@v4
         with:
-          aws_key_id: ${{ secrets.AWS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
-          aws_bucket: ${{ secrets.AWS_BUCKET }}
-          source_dir: 'public'
-          destination_dir: ''
+          name: public
+          path: public
+          retention-days: 1
+
+  upload-to-s3:
+    runs-on: ubuntu-latest
+    container: amazon/aws-cli
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: public
+          path: public
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4.1.0
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-central-1
+      - name: Upload files
+        env:
+          AWS_BUCKET: ${{ secrets.AWS_BUCKET }}
+        run: |
+          aws s3 mv public/* s3://$AWS_BUCKET/ --recursive
+
