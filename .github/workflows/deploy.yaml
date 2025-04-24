@@ -31,5 +31,5 @@ jobs:
         env:
           AWS_BUCKET: ${{ secrets.AWS_BUCKET }}
         run: |
-          aws s3 mv public/* s3://$AWS_BUCKET/ --recursive
+          aws s3 mv public/ s3://$AWS_BUCKET/ --recursive
 
