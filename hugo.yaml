@@ -11,7 +11,10 @@ menus:
      weight: 1
    - name: 'About'
      url: '/pages/about/'
-     weight: 1
+     weight: 3
+   - name: 'Blog'
+     url: '/posts/'
+     weight: 2
 params:
   socialIcons:
   - name: github
