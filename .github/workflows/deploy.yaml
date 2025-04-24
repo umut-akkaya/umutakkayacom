@@ -6,7 +6,8 @@ on:
       - main
 
 jobs:
-  build-hugo-and-upload-artifact:
+  build-hugo-and-upload-s3:
+    name: Build and Hugo Upload S3
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
