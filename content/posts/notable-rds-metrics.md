@@ -1,8 +1,10 @@
-+++
-title = 'Notable Rds Metrics'
-date = 2025-04-24T18:05:27+02:00
-draft = false
-+++
+---
+title: 'Notable Rds Metrics'
+date: 2025-04-24T18:05:27+02:00
+draft: false
+kind: 'page'
+type: 'page'
+---
 # Notable RDS Cloudwatch Metrics
 
 Cloudwatch is AWS managed monitoring solution which provides insights about Amazon Services. For RDS it provides multiple metrics. Some of the notable metrics can be used for troubleshooting for EBS;

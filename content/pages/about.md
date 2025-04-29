@@ -1,11 +1,14 @@
-+++
-title = 'Who am I?'
-date = 2025-04-22T13:46:54+02:00
-draft = false
-author = 'Umut AKKAYA'
-description = 'All about Umut AKKAYA and what we now about him.'
-tags = ["personal"]
-+++
+---
+title: 'Who am I?'
+date: 2025-04-22T13:46:54+02:00
+draft: false
+author: 'Umut AKKAYA'
+description: 'All about Umut AKKAYA and what we now about him.'
+tags:
+  - personal
+kind: 'page'
+type: 'page'
+---
 
 ### About Me
 I am a computer scientist who tries to understand and implement technology for the good of myself, my family and friends, my organization and my team. I started my career as a software developer and have worked in many roles. In every role, I always try to implement the best industry practices in my job and contribute to the work in a way that matches with frontrunners.

@@ -1,14 +1,11 @@
-baseURL: https://example.org/
+baseURL: https://umutakkaya.com/
 languageCode: en-us
-title: My New Hugo Site
+title: Umut's Blog
 themesDir: themes
 theme: hugo-blog-awesomee
 
 menus:
   main:
-   - name: 'Home'
-     url: '/'
-     weight: 1
    - name: 'About'
      url: '/pages/about/'
      weight: 3
@@ -16,6 +13,8 @@ menus:
      url: '/posts/'
      weight: 2
 params:
+  mainSections:
+    - page
   socialIcons:
   - name: github
     url: https://github.com/umut-akkaya
