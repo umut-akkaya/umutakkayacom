@@ -6,7 +6,6 @@ author: 'Umut AKKAYA'
 description: 'All about Umut AKKAYA and what we now about him.'
 tags:
   - personal
-kind: 'page'
 type: 'page'
 ---
 
