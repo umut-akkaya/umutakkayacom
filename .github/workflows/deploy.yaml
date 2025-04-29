@@ -34,4 +34,9 @@ jobs:
         run: |
           aws s3 rm s3://$AWS_BUCKET/ --recursive
           aws s3 mv public/ s3://$AWS_BUCKET/ --recursive
+      - name: Create Invalidation
+        env:
+          DISTRIBUTION_ID: ${{ secrets.DISTRIBUTION_ID }}
+        run: |
+            aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
 
