@@ -32,4 +32,5 @@ params:
     description: Welcome to my blog. I am using this website as a notebook to store and share any information related to comp science, devops, cloud computing and etc. 
 
 services:
-  googleAnalytics: G-RSRY7SL2L2
+  googleAnalytics: 
+    id: G-RSRY7SL2L2
