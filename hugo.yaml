@@ -34,3 +34,9 @@ params:
 services:
   googleAnalytics: 
     id: G-RSRY7SL2L2
+
+sitemap:
+  changeFreq: "daily"
+  disable: false
+  filename: sitemap.xml
+  priority: -1
