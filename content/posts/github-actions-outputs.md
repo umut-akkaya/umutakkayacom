@@ -7,7 +7,7 @@ author: Umut AKKAYA
 ---
 # Cannot pass information between jobs in Github Actions if it contains secret values
 
-Passing information between Github actions steps is one of the most necessary features. Github Actions supports multiple way of doing this. Normall a job is a seperated environment. It means you cannot reach the resources between jobs. However sometimes you need to transfer some information and files between jobs and steps in order to shape the workflows behivaior.
+Passing information between Github actions steps is one of the most necessary feature. Github Actions supports multiple way of doing this. Normally a job is a seperated environment. It means you cannot reach the resources between jobs. However sometimes you need to transfer some information and files between jobs and steps in order to shape the workflows behaviour.
 
 Github Actions allows us multiple ways to do it. I will mention most of the used ones before i get to the point. These are;
 
@@ -15,13 +15,13 @@ Github Actions allows us multiple ways to do it. I will mention most of the used
 - Environment Variables
 - Job Outputs
 
-These 3 methods are widely used and covers most of the need. Let's quicly have a recap on these.
+These 3 methods are widely used and covers most of the need. Let's quickly have a recap on these.
 
 ## Artifacts
 
-Most of the workflows produces some kind of files such as docker images, configuration files, caches etc. After the producement of this files we might use these files in the following jobs or steps. If we are going to use them in the same job, there is no problem. Because the job uses the same storage and files are located in our runner (Machine that executes our worklow). However they are needed in the other jobs we cannot get these files unless they are running in the same machine.
+Most of the workflows produces some kind of files such as docker images, configuration files, caches etc. After the producement of these files we might want to use them in the subsequent jobs or steps. If we are going to use them in the same job, there is no problem. Because the job uses the same storage and files are located in our runner (Machine that executes our worklow). However if they are needed in the other jobs we cannot get these files unless they are running in the same machine.
 
-To overcome this problem we can use the Artifacts Actions. With Github developed `actions/upload-artifact` and `actions/download-artifact` we can achive this goal. As an example following workflow configuration allows us to transfer files under `tey` folder and use them in the next job
+To overcome this problem we can use the Artifacts Actions. With Github developed `actions/upload-artifact` and `actions/download-artifact` we can achive this goal. As an example following workflow configuration allows us to transfer files under `tey/.hidden` folder and use them in the next job.
 
 ```yaml
 on: workflow_dispatch
@@ -65,7 +65,7 @@ jobs:
 
 ## Environment Variables
 
-In Github Actions every steps is getting executed by it's own shell. It means environment variables are defined in one step might not be able to be transfared to another step. In order to solve this `GITHUB_ENV` is used. You can transfer your envs to this file and it will load yor env variables in the next step.
+In Github Actions every step is getting executed by it's own shell. It means environment variables are defined in one step might not be able to be transferred to another step. In order to solve this `GITHUB_ENV` is used. You can transfer your envs to this file and Github will load your env variables in the next steps.
 
 ```shell
 echo "pathmodified=$pathmodified" >> $GITHUB_ENV
@@ -101,6 +101,6 @@ jobs:
 ```
 ## Pain Points of Outputs
 
-It worked smoothly until i have an experience about failing to transfer an output. I tried everything such as removing the dash from output name or setting output name before supplying them to `GITHUB_OUTPUT`. None of them worked until i have figured it our from documentation [Github Actions Outputs](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/passing-information-between-jobs#overview).
+It worked smoothly until i had an experience about failing to transfer an output. I tried everything such as removing the dash from output name or setting output before supplying them to `GITHUB_OUTPUT`. None of them worked until i have figured it out from documentation [Github Actions Outputs](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/passing-information-between-jobs#overview).
 
-At the end if your output part has an secret it is masked by runner cannot not passed to outputs. In case of having a secret like `12345` you will not able to transfer outputs such as `test12345`. This behaviour is obviously designed for protection of the secrets so inorder to not getting blocked by a situation like this make sure that you are not using common words in your secrets such as `linux`or `arm`.
+At the end if some parts of your outputs has an secret, it will be masked by runners and it cannot be passed to outputs. In case of having a secret like `12345` you will not able to transfer outputs such as `test12345`. This behaviour is obviously designed for protection of the secrets so in order to not getting blocked by a situation like this, make sure that you are not using common words in your secrets such as `linux`or `arm`.
