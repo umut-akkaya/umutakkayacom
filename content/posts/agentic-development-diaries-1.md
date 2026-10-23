@@ -1,7 +1,7 @@
 ---
 title: 'Journey to Become an Agentic Engineer | Entry 001'
 date: 2026-10-23T23:30:19+02:00
-draft: true
+draft: false
 type: 'page'
 author: Umut AKKAYA
 ---
