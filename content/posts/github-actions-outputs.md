@@ -5,7 +5,7 @@ draft: false
 type: 'page'
 author: Umut AKKAYA
 sitemap:
-    changefreq: never
+  changefreq: never
 ---
 # Cannot pass information between jobs in Github Actions if it contains secret values
 

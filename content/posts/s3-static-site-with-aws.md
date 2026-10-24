@@ -5,7 +5,7 @@ draft: false
 kind: 'page'
 type: 'page'
 sitemap:
-    changefreq: never
+  changefreq: never
 ---
 # Creating a Static Website by Using terraform-aws-staticwebsite Module
 

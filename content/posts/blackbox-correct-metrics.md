@@ -5,7 +5,7 @@ draft: false
 type: 'page'
 author: Umut AKKAYA
 sitemap:
-    changefreq: never
+  changefreq: never
 ---
 # Up DOES NOT Mean The Site is OK
 

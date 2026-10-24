@@ -5,7 +5,7 @@ draft: true
 type: 'page'
 author: Umut AKKAYA
 sitemap:
-    changefreq: never
+  changefreq: never
 ---
 
 > ⚠️ Disclaimer: I am not a natural writer so it is possible that the essay might not be structured properly :D  
