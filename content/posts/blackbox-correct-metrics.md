@@ -4,6 +4,8 @@ date: 2025-05-10T00:49:28+02:00
 draft: false
 type: 'page'
 author: Umut AKKAYA
+sitemap:
+    changefreq: never
 ---
 # Up DOES NOT Mean The Site is OK
 

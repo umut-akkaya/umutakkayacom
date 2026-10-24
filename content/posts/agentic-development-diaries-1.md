@@ -4,6 +4,8 @@ date: 2026-10-23T23:30:19+02:00
 draft: true
 type: 'page'
 author: Umut AKKAYA
+sitemap:
+    changefreq: never
 ---
 
 > ⚠️ Disclaimer: I am not a natural writer so it is possible that the essay might not be structured properly :D  

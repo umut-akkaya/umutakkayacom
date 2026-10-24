@@ -4,6 +4,8 @@ date: 2025-06-21T19:27:51+02:00
 draft: false
 type: 'page'
 author: Umut AKKAYA
+sitemap:
+    changefreq: never
 ---
 # Cannot pass information between jobs in Github Actions if it contains secret values
 

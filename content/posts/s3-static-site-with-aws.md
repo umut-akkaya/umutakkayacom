@@ -4,6 +4,8 @@ date: 2025-05-04T19:56:05+02:00
 draft: false
 kind: 'page'
 type: 'page'
+sitemap:
+    changefreq: never
 ---
 # Creating a Static Website by Using terraform-aws-staticwebsite Module
 

@@ -4,6 +4,8 @@ date: 2025-04-24T18:05:27+02:00
 draft: false
 type: 'page'
 author: Umut AKKAYA
+sitemap:
+    changefreq: never
 ---
 # Notable RDS Cloudwatch Metrics
 
